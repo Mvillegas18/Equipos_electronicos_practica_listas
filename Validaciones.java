@@ -6,6 +6,10 @@ public class Validaciones {
         return texto.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+");
     }
 
+    public static boolean validarModalidad(String modalidad) {
+        return modalidad.equalsIgnoreCase("virtual") || modalidad.equalsIgnoreCase("presencial");
+    }
+
     public static boolean validarTextoSinEspeciales(String texto) {
         return texto.matches("[a-zA-Z0-9]+");
     }
