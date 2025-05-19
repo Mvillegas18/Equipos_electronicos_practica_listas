@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Metodos {
+    Validaciones validaciones = new Validaciones();
     Scanner scanner = new Scanner(System.in);
     List<ComputadorPortatil> portatiles = new ArrayList<>();
     List<EstudianteIngenieria> ingenieria = new ArrayList<>();
@@ -28,11 +29,11 @@ public class Metodos {
         System.out.print("Serial del equipo asignado: ");
         String serial = scanner.nextLine();
 
-        if (!Utilidades.validarTextoSinEspeciales(cedula) ||
-                !Utilidades.validarTextoSinNumeros(nombre) ||
-                !Utilidades.validarTextoSinNumeros(apellido) ||
-                !Utilidades.validarTelefono(telefono) ||
-                !Utilidades.validarTextoSinEspeciales(serial)) {
+        if (!validaciones.validarTextoSinEspeciales(cedula) ||
+                !validaciones.validarTextoSinNumeros(nombre) ||
+                !validaciones.validarTextoSinNumeros(apellido) ||
+                !validaciones.validarTelefono(telefono) ||
+                !validaciones.validarTextoSinEspeciales(serial)) {
             System.out.println("Error en los datos ingresados.");
             return;
         }
@@ -60,10 +61,10 @@ public class Metodos {
         int serial = scanner.nextInt();
         scanner.nextLine();
 
-        if (!Utilidades.validarTextoSinEspeciales(cedula) ||
-                !Utilidades.validarTextoSinNumeros(nombre) ||
-                !Utilidades.validarTextoSinNumeros(apellido) ||
-                !Utilidades.validarTelefono(telefono)) {
+        if (!validaciones.validarTextoSinEspeciales(cedula) ||
+                !validaciones.validarTextoSinNumeros(nombre) ||
+                !validaciones.validarTextoSinNumeros(apellido) ||
+                !validaciones.validarTelefono(telefono)) {
             System.out.println("Error en los datos ingresados.");
             return;
         }
