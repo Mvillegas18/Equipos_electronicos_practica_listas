@@ -3,7 +3,6 @@ import java.util.*;
 public class Menu {
 
     public void mostrarMenu() {
-        Metodos metodos = new Metodos();
         Scanner scanner = new Scanner(System.in);
 
         int opcion;
