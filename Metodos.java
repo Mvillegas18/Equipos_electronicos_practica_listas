@@ -38,6 +38,16 @@ public class Metodos {
             return;
         }
 
+        if(promedio < 0.0 || promedio > 5.0){
+            System.out.println("El promedio debe estar entre 0 y 5.");
+            return;
+        }
+
+        if(semestre < 1 || semestre > 12){
+            System.out.println("El número de semestre debe estar entre 1 y 12.");
+            return;
+        }
+
         ingenieria.add(new EstudianteIngenieria(cedula, nombre, apellido, telefono, semestre, promedio, serial));
         System.out.println("Estudiante de ingeniería registrado con éxito.");
     }
@@ -64,10 +74,13 @@ public class Metodos {
         if (!validaciones.validarTextoSinEspeciales(cedula) ||
                 !validaciones.validarTextoSinNumeros(nombre) ||
                 !validaciones.validarTextoSinNumeros(apellido) ||
-                !validaciones.validarTelefono(telefono)) {
+                !validaciones.validarTelefono(telefono) ||
+                !validaciones.validarModalidad(modalidad) ||
+                asignaturas <= 0 || serial <= 0) {
             System.out.println("Error en los datos ingresados.");
             return;
         }
+
 
         diseno.add(new EstudianteDiseno(cedula, nombre, apellido, telefono, modalidad, asignaturas, serial));
         System.out.println("Estudiante de diseño registrado con éxito.");
