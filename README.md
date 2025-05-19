@@ -58,3 +58,41 @@ A continuación, se nombrarán los objetos y métodos que deben incluir el códi
 -   Procesador: método con submenú para escoger:
     1. AMD Ryzen
     2. Intel® Core™ i5
+
+## ACCIONES
+
+Crear un menú con la siguiente estructura:
+
+### 1. ESTUDIANTES DE INGENIERÍA
+- 1.1 Registrar préstamo de equipo.
+- 1.2 Modificar préstamo de equipo (por serial o cédula).
+- 1.3 Devolución de equipo (se elimina el registro) (por serial o cédula).
+- 1.4 Buscar equipo (por serial o cédula).
+- 1.5 Volver al menú principal.
+
+### 2. ESTUDIANTES DE DISEÑO
+- 2.1 Registrar préstamo de equipo.
+- 2.2 Modificar préstamo de equipo (por serial o cédula).
+- 2.3 Devolución de equipo (se elimina el registro) (por serial o cédula).
+- 2.4 Buscar equipo (por serial o cédula).
+- 2.5 Volver al menú principal.
+
+### 3. IMPRIMIR INVENTARIO TOTAL
+
+### 4. SALIR DEL PROGRAMA
+
+---
+
+## REQUISITOS
+
+1. El tamaño de los vectores debe ser dinámico: aumentando una posición al ingresar un elemento y reduciendo una posición al eliminar algún elemento.
+2. Al registrar el préstamo de un equipo, se debe comprobar que la persona no tenga ningún equipo ya registrado en su respectiva facultad.
+3. Crear estructuras para almacenar los vectores, es decir:
+    - `vector_ingenieros`
+    - `vector_disenadores`
+    - `vector_portatil`
+    - `vector_tableta`
+4. Utilizar sobrecarga en los métodos.
+5. El **serial del equipo** ni la **cédula del estudiante** pueden ser modificados una vez ingresados (al eliminar el registro, estos se eliminarán).
+6. En la opción **modificar**, se deben usar los métodos de cadenas de texto creados anteriormente para modificar los atributos relacionados con estos.
+
