@@ -32,13 +32,14 @@ public class Menu {
     }
 
     public static void mostrarMenuIngenieria(){
+        Metodos metodos = new Metodos();
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
         do {
             System.out.println("\n-- MENÚ INGENIERÍA --");
-            System.out.println("1. Registrar préstamo");
-            System.out.println("2. Modificar préstamo");
+            System.out.println("1. Registrar préstamo de equipo");
+            System.out.println("2. Modificar préstamo de equipo");
             System.out.println("3. Devolución de equipo");
             System.out.println("4. Buscar equipo");
             System.out.println("5. Volver al menú principal");
@@ -50,6 +51,7 @@ public class Menu {
                 case 1:
                     // Lógica de registrar préstamo
                     System.out.println("Registrando préstamo de computador portátil...");
+                    metodos.registrarPrestamoIngenieria();
                     break;
                 case 2:
                     // Lógica de modificar
@@ -72,6 +74,7 @@ public class Menu {
         }while(opcion != 5);
     }
     public static void mostrarMenuDiseno(){
+        Metodos metodos = new Metodos();
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
@@ -90,6 +93,7 @@ public class Menu {
                 case 1:
                     // Lógica de registrar préstamo
                     System.out.println("Registrando préstamo de tableta...");
+                    metodos.registrarPrestamoDiseno();
                     break;
                 case 2:
                     // Lógica de modificar
@@ -105,6 +109,7 @@ public class Menu {
                     break;
                 case 5:
                     System.out.println("Volviendo al menú principal...");
+                    System.out.println();
                     break;
                 default:
                     System.out.println("⚠️ Opción no válida.");

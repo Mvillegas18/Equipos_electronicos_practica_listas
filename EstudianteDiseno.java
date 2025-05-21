@@ -1,8 +1,8 @@
 public class EstudianteDiseno {
-    private  String cedula, nombre, apellido, telefono, modalidad;
-    private  int asignaturas, serial;
+    private  String cedula, nombre, apellido, telefono, modalidad, serial;
+    private  int asignaturas;
 
-    public EstudianteDiseno(String cedula, String nombre, String apellido, String telefono, String modalidad, int asignaturas, int serial) {
+    public EstudianteDiseno(String cedula, String nombre, String apellido, String telefono, String modalidad, int asignaturas, String serial) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -66,11 +66,11 @@ public class EstudianteDiseno {
         this.asignaturas = asignaturas;
     }
 
-    public int getSerial() {
+    public String getSerial() {
         return serial;
     }
 
-    public void setSerial(int serial) {
+    public void setSerial(String serial) {
         this.serial = serial;
     }
 }

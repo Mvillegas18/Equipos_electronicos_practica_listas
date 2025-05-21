@@ -18,6 +18,20 @@ public class Validaciones {
         return telefono.matches("[0-9]{7,10}");
     }
 
+    public boolean validarCedula(String cedula) {
+        return cedula.matches("\\d+"); // solo dígitos (uno o más)
+    }
+
+    public static float leerFloat(Scanner sc) {
+        try {
+            return Float.parseFloat(sc.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Entrada no válida. Ingrese un número decimal (ej. 3.5):");
+            return leerFloat(sc);
+        }
+    }
+
+
     public static int leerEntero(Scanner sc) {
         try{
             return Integer.parseInt(sc.nextLine());
