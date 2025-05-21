@@ -49,23 +49,15 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    // Lógica de registrar préstamo
-                    System.out.println("Registrando préstamo de computador portátil...");
                     metodos.registrarPrestamoIngenieria();
                     break;
                 case 2:
-                    // Lógica de modificar
-                    System.out.println("Modificando computador portátil...");
                     metodos.modificarPrestamoIngenieria();
                     break;
                 case 3:
-                    // Lógica de devolución
-                    System.out.println("Devolviendo computador portátil...");
-                    metodos.devolverPrestamoIngenieria();
+                    metodos.devolverEquipoIngenieria();
                     break;
                 case 4:
-                    // Lógica de búsqueda
-                    System.out.println("Buscando computador portátil...");
                     metodos.buscarPrestamoIngenieria();
                     break;
                 case 5:
@@ -94,30 +86,22 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    // Lógica de registrar préstamo
-                    System.out.println("Registrando préstamo de tableta...");
                     metodos.registrarPrestamoDiseno();
                     break;
                 case 2:
-                    // Lógica de modificar
-                    System.out.println("Modificando tableta...");
                     metodos.modificarPrestamoDiseno();
                     break;
                 case 3:
-                    // Lógica de devolución
-                    System.out.println("Devolviendo tableta...");
                     metodos.devolverPrestamoDiseno();
                     break;
                 case 4:
-                    // Lógica de búsqueda
-                    System.out.println("Buscando tableta...");
                     metodos.buscarPrestamoDiseno();
                     break;
                 case 5:
                     System.out.println("Volviendo al menú principal...");
                     break;
                 default:
-                    System.out.println("⚠️ Opción no válida.");
+                    System.out.println("Opción no válida.");
             }
         }while(opcion != 5);
     }
