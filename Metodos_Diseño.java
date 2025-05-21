@@ -13,7 +13,6 @@ public class Metodos_Diseño {
     public void registrarPrestamoDiseno() {
         System.out.println("\n--- Registro Préstamo Diseño ---");
 
-        // Cédula
         String cedula;
         do {
             System.out.print("Cédula: ");
@@ -23,7 +22,6 @@ public class Metodos_Diseño {
             }
         } while (!validaciones.validarCedula(cedula));
 
-        // Verificar si ya tiene préstamo
         for (EstudianteDiseno est : diseno) {
             if (est.getCedula().equals(cedula)) {
                 System.out.println("Este estudiante ya tiene un equipo asignado.");
@@ -31,7 +29,6 @@ public class Metodos_Diseño {
             }
         }
 
-        // Nombre
         String nombre;
         do {
             System.out.print("Nombre: ");
@@ -41,7 +38,6 @@ public class Metodos_Diseño {
             }
         } while (!validaciones.validarTextoSinNumeros(nombre));
 
-        // Apellido
         String apellido;
         do {
             System.out.print("Apellido: ");
@@ -51,7 +47,6 @@ public class Metodos_Diseño {
             }
         } while (!validaciones.validarTextoSinNumeros(apellido));
 
-        // Teléfono
         String telefono;
         do {
             System.out.print("Teléfono: ");
@@ -61,7 +56,6 @@ public class Metodos_Diseño {
             }
         } while (!validaciones.validarTelefono(telefono));
 
-        // Modalidad
         String modalidad;
         do {
             System.out.print("Modalidad (presencial o virtual): ");
@@ -71,7 +65,6 @@ public class Metodos_Diseño {
             }
         } while (!validaciones.validarModalidad(modalidad));
 
-        // Cantidad de asignaturas
         int asignaturas;
         do {
             System.out.print("Cantidad de asignaturas: ");
@@ -81,7 +74,6 @@ public class Metodos_Diseño {
             }
         } while (asignaturas <= 0);
 
-        // Datos de la tableta
         System.out.print("Serial de la tableta: ");
         String serial = scanner.nextLine();
 
@@ -106,13 +98,11 @@ public class Metodos_Diseño {
         System.out.print("Peso (kg): ");
         float peso = Validaciones.leerFloat(scanner);
 
-        // Validaciones finales
         if (!validaciones.validarTextoSinEspeciales(serial)) {
             System.out.println("El serial no debe contener caracteres especiales.");
             return;
         }
 
-        // Crear objetos y guardar
         TabletaGrafica tableta = new TabletaGrafica(serial, marca, tamano, precio, almacenamiento, peso);
         EstudianteDiseno estudiante = new EstudianteDiseno(cedula, nombre, apellido, telefono, modalidad, asignaturas, serial);
 
@@ -123,7 +113,55 @@ public class Metodos_Diseño {
     }
 
     public void modificarPrestamoDiseno() {
-        System.out.println("\n--- Modificar Préstamo Diseño ---");
+        System.out.println("\n--- Modificar Préstamo Ingeniería ---");
+
+        System.out.print("Ingrese la cédula del estudiante a modificar: ");
+        String cedula = scanner.nextLine();
+
+        EstudianteDiseno estudiante = null;
+        for (EstudianteDiseno est : diseno) {
+            if (est.getCedula().equals(cedula)) {
+                estudiante = est;
+                break;
+            }
+        }
+
+        if (estudiante == null) {
+            System.out.println("No se encontró ningún estudiante con esa cédula.");
+            return;
+        }
+
+        System.out.print("Nuevo nombre (" + estudiante.getNombre() + "): ");
+        String nuevoNombre = scanner.nextLine();
+        if (validaciones.validarTextoSinNumeros(nuevoNombre)) {
+            estudiante.setNombre(nuevoNombre);
+        }
+
+        System.out.print("Nuevo apellido (" + estudiante.getApellido() + "): ");
+        String nuevoApellido = scanner.nextLine();
+        if (validaciones.validarTextoSinNumeros(nuevoApellido)) {
+            estudiante.setApellido(nuevoApellido);
+        }
+
+        System.out.print("Nuevo teléfono (" + estudiante.getTelefono() + "): ");
+        String nuevoTelefono = scanner.nextLine();
+        if (validaciones.validarTelefono(nuevoTelefono)) {
+            estudiante.setTelefono(nuevoTelefono);
+        }
+
+        System.out.print("Nueva modalidad (" + estudiante.getModalidad() + "): ");
+        String nuevaModalidad = scanner.nextLine();
+        if (validaciones.validarModalidad(nuevaModalidad)) {
+            estudiante.setModalidad(nuevaModalidad);
+        }
+
+        System.out.print("Nuevo promedio (" + estudiante.getAsignaturas() + "): ");
+        int nuevoPromedio = Validaciones.leerEntero(scanner);
+        if (nuevoPromedio >= 0) {
+            estudiante.setAsignaturas(nuevoPromedio);
+        }
+
+        System.out.println("Datos del estudiante actualizados con éxito.");
     }
 
     public void devolverPrestamoDiseno() {
@@ -131,6 +169,51 @@ public class Metodos_Diseño {
     }
 
     public void buscarPrestamoDiseno() {
-        System.out.println("\n--- Buscar Préstamo Diseño ---");
+        System.out.println("\n--- Búsqueda de Préstamo Diseño ---");
+
+        System.out.print("Ingrese la cédula del estudiante: ");
+        String cedula = scanner.nextLine();
+
+        EstudianteDiseno estudianteEncontrado = null;
+        for (EstudianteDiseno estudiante : diseno) {
+            if (estudiante.getCedula().equals(cedula)) {
+                estudianteEncontrado = estudiante;
+                break;
+            }
+        }
+
+        if (estudianteEncontrado == null) {
+            System.out.println("No se encontró un préstamo para esa cédula.");
+            return;
+        }
+
+        TabletaGrafica equipo = null;
+        for (TabletaGrafica tab : tabletas) {
+            if (tab.getSerial().equals(estudianteEncontrado.getSerial())) {
+                equipo = tab;
+                break;
+            }
+        }
+
+        System.out.println("---- Datos del Estudiante ----");
+        System.out.println("Cédula: " + estudianteEncontrado.getCedula());
+        System.out.println("Nombre: " + estudianteEncontrado.getNombre());
+        System.out.println("Apellido: " + estudianteEncontrado.getApellido());
+        System.out.println("Teléfono: " + estudianteEncontrado.getTelefono());
+        System.out.println("Modalidad: " + estudianteEncontrado.getModalidad());
+        System.out.println("Asignaturas: " + estudianteEncontrado.getAsignaturas());
+
+        if (equipo != null) {
+            System.out.println("---- Datos de la Tableta ----");
+            System.out.println("Serial: " + equipo.getSerial());
+            System.out.println("Marca: " + equipo.getMarca());
+            System.out.println("Tamaño: " + equipo.getTamano());
+            System.out.println("Precio: " + equipo.getPrecio());
+            System.out.println("Almacenamiento: " + equipo.getAlmacenamiento());
+            System.out.println("Peso: " + equipo.getPeso());
+        } else {
+            System.out.println("Equipo no encontrado.");
+        }
     }
+
 }
