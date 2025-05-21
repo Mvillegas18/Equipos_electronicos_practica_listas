@@ -33,25 +33,25 @@ public class Metodos_ingenieria {
         do {
             System.out.print("Nombre: ");
             nombre = scanner.nextLine();
-            if (!validaciones.validarTextoSinNumeros(nombre)) {
+            if (!Validaciones.validarTextoSinNumeros(nombre)) {
                 System.out.println("El nombre no debe contener números ni caracteres especiales.");
             }
-        } while (!validaciones.validarTextoSinNumeros(nombre));
+        } while (!Validaciones.validarTextoSinNumeros(nombre));
 
         String apellido;
         do {
             System.out.print("Apellido: ");
             apellido = scanner.nextLine();
-            if (!validaciones.validarTextoSinNumeros(apellido)) {
+            if (!Validaciones.validarTextoSinNumeros(apellido)) {
                 System.out.println("El apellido no debe contener números ni caracteres especiales.");
             }
-        } while (!validaciones.validarTextoSinNumeros(apellido));
+        } while (!Validaciones.validarTextoSinNumeros(apellido));
 
         String telefono;
         do {
             System.out.print("Teléfono: ");
             telefono = scanner.nextLine();
-            if (!validaciones.validarTelefono(telefono)) {
+            if (!Validaciones.validarTelefono(telefono)) {
                 System.out.println("El teléfono debe contener solo números.");
             }
         } while (!validaciones.validarCedula(telefono));

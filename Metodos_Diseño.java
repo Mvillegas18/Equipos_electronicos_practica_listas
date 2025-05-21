@@ -33,37 +33,37 @@ public class Metodos_Diseño {
         do {
             System.out.print("Nombre: ");
             nombre = scanner.nextLine();
-            if (!validaciones.validarTextoSinNumeros(nombre)) {
+            if (!Validaciones.validarTextoSinNumeros(nombre)) {
                 System.out.println("El nombre no debe contener números ni caracteres especiales.");
             }
-        } while (!validaciones.validarTextoSinNumeros(nombre));
+        } while (!Validaciones.validarTextoSinNumeros(nombre));
 
         String apellido;
         do {
             System.out.print("Apellido: ");
             apellido = scanner.nextLine();
-            if (!validaciones.validarTextoSinNumeros(apellido)) {
+            if (!Validaciones.validarTextoSinNumeros(apellido)) {
                 System.out.println("El apellido no debe contener números ni caracteres especiales.");
             }
-        } while (!validaciones.validarTextoSinNumeros(apellido));
+        } while (!Validaciones.validarTextoSinNumeros(apellido));
 
         String telefono;
         do {
             System.out.print("Teléfono: ");
             telefono = scanner.nextLine();
-            if (!validaciones.validarTelefono(telefono)) {
+            if (!Validaciones.validarTelefono(telefono)) {
                 System.out.println("El teléfono debe contener 7 a 10 dígitos numéricos.");
             }
-        } while (!validaciones.validarTelefono(telefono));
+        } while (!Validaciones.validarTelefono(telefono));
 
         String modalidad;
         do {
             System.out.print("Modalidad (presencial o virtual): ");
             modalidad = scanner.nextLine().toLowerCase();
-            if (!validaciones.validarModalidad(modalidad)) {
+            if (!Validaciones.validarModalidad(modalidad)) {
                 System.out.println("Modalidad inválida. Debe ser presencial o virtual.");
             }
-        } while (!validaciones.validarModalidad(modalidad));
+        } while (!Validaciones.validarModalidad(modalidad));
 
         int asignaturas;
         do {
