@@ -56,14 +56,17 @@ public class Menu {
                 case 2:
                     // Lógica de modificar
                     System.out.println("Modificando computador portátil...");
+                    metodos.modificarPrestamoIngenieria();
                     break;
                 case 3:
                     // Lógica de devolución
                     System.out.println("Devolviendo computador portátil...");
+                    metodos.devolverPrestamoIngenieria();
                     break;
                 case 4:
                     // Lógica de búsqueda
                     System.out.println("Buscando computador portátil...");
+                    metodos.buscarPrestamoIngenieria();
                     break;
                 case 5:
                     System.out.println("Volviendo al menú principal...");
@@ -98,18 +101,20 @@ public class Menu {
                 case 2:
                     // Lógica de modificar
                     System.out.println("Modificando tableta...");
+                    metodos.modificarPrestamoDiseno();
                     break;
                 case 3:
                     // Lógica de devolución
                     System.out.println("Devolviendo tableta...");
+                    metodos.devolverPrestamoDiseno();
                     break;
                 case 4:
                     // Lógica de búsqueda
                     System.out.println("Buscando tableta...");
+                    metodos.buscarPrestamoDiseno();
                     break;
                 case 5:
                     System.out.println("Volviendo al menú principal...");
-                    System.out.println();
                     break;
                 default:
                     System.out.println("⚠️ Opción no válida.");

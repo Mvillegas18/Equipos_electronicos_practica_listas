@@ -101,6 +101,15 @@ public class Metodos_ingenieria {
         System.out.println("Préstamo de equipo a estudiante de Ingeniería registrado con éxito.");
     }
 
+    public void modificarPrestamoIngenieria() {
+        System.out.println("\n--- Modificar Préstamo Ingeniería ---");
+    }
 
+    public void devolverPrestamoIngenieria() {
+        System.out.println("\n--- Devolver Préstamo Ingeniería ---");
+    }
 
+    public void buscarPrestamoIngenieria() {
+        System.out.println("\n--- Buscar Préstamo Ingeniería ---");
+    }
 }

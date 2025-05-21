@@ -121,4 +121,16 @@ public class Metodos_Diseño {
 
         System.out.println("Préstamo de equipo a estudiante de Diseño registrado con éxito.");
     }
+
+    public void modificarPrestamoDiseno() {
+        System.out.println("\n--- Modificar Préstamo Diseño ---");
+    }
+
+    public void devolverPrestamoDiseno() {
+        System.out.println("\n--- Devolver Préstamo Diseño ---");
+    }
+
+    public void buscarPrestamoDiseno() {
+        System.out.println("\n--- Buscar Préstamo Diseño ---");
+    }
 }
