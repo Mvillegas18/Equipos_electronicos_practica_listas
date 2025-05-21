@@ -32,7 +32,7 @@ public class Menu {
     }
 
     public static void mostrarMenuIngenieria(){
-        Metodos metodos = new Metodos();
+        Metodos_ingenieria metodos = new Metodos_ingenieria();
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
@@ -74,7 +74,7 @@ public class Menu {
         }while(opcion != 5);
     }
     public static void mostrarMenuDiseno(){
-        Metodos metodos = new Metodos();
+        Metodos_Diseño metodos = new Metodos_Diseño();
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
