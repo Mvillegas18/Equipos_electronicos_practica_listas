@@ -165,7 +165,39 @@ public class Metodos_Diseño {
     }
 
     public void devolverPrestamoDiseno() {
-        System.out.println("\n--- Devolver Préstamo Diseño ---");
+            System.out.println("\n--- Devolución de Equipo Diseño ---");
+
+            System.out.print("Ingrese la cédula del estudiante: ");
+            String cedula = scanner.nextLine();
+
+            EstudianteDiseno estudianteAEliminar = null;
+            for (EstudianteDiseno estudiante : diseno) {
+                if (estudiante.getCedula().equals(cedula)) {
+                    estudianteAEliminar = estudiante;
+                    break;
+                }
+            }
+
+            if (estudianteAEliminar == null) {
+                System.out.println("No se encontró un préstamo asociado a esta cédula.");
+                return;
+            }
+
+            TabletaGrafica equipoAEliminar = null;
+            for (TabletaGrafica pc : tabletas) {
+                if (pc.getSerial().equals(estudianteAEliminar.getSerial())) {
+                    equipoAEliminar = pc;
+                    break;
+                }
+            }
+
+            diseno.remove(estudianteAEliminar);
+            if (equipoAEliminar != null) {
+                tabletas.remove(equipoAEliminar);
+            }
+
+            System.out.println("Devolución realizada con éxito.");
+
     }
 
     public void buscarPrestamoDiseno() {
