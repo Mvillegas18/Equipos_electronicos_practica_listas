@@ -20,13 +20,10 @@ public class Menu {
             switch (opcion) {
                 case 1 -> mostrarMenuIngenieria();
                 case 2 -> mostrarMenuDiseno();
-                case 3 -> {
-                    System.out.println("Imprimiendo inventario total...");
-                }
-                case 4 -> System.out.println("¡Hasta luego!");
+                case 3 -> System.out.println("¡Hasta luego!");
                 default -> System.out.println("Opción inválida.");
             }
-        } while (opcion != 4);
+        } while (opcion != 3);
 
 
     }
@@ -42,7 +39,8 @@ public class Menu {
             System.out.println("2. Modificar préstamo de equipo");
             System.out.println("3. Devolución de equipo");
             System.out.println("4. Buscar equipo");
-            System.out.println("5. Volver al menú principal");
+            System.out.println("5. Mostrar inventario");
+            System.out.println("6. Volver al menú principal");
             System.out.print("Seleccione una opción: ");
 
             opcion = Validaciones.leerEntero(scanner);
@@ -61,12 +59,15 @@ public class Menu {
                     metodos.buscarPrestamoIngenieria();
                     break;
                 case 5:
+                    metodos.mostrarInventarioIngenieria();
+                    break;
+                case 6:
                     System.out.println("Volviendo al menú principal...");
                     break;
                 default:
                     System.out.println("Opción no invalida.");
             }
-        }while(opcion != 5);
+        }while(opcion != 6);
     }
     public static void mostrarMenuDiseno(){
         Metodos_Diseño metodos = new Metodos_Diseño();
@@ -79,7 +80,8 @@ public class Menu {
             System.out.println("2. Modificar préstamo");
             System.out.println("3. Devolución de equipo");
             System.out.println("4. Buscar equipo");
-            System.out.println("5. Volver al menú principal");
+            System.out.println("5. Imprimir inventario");
+            System.out.println("6. Volver al menú principal");
             System.out.print("Seleccione una opción: ");
 
             opcion = Validaciones.leerEntero(scanner);
@@ -98,11 +100,14 @@ public class Menu {
                     metodos.buscarPrestamoDiseno();
                     break;
                 case 5:
+                    metodos.mostrarInventarioDiseño();
+                    break;
+                case 6:
                     System.out.println("Volviendo al menú principal...");
                     break;
                 default:
                     System.out.println("Opción no válida.");
             }
-        }while(opcion != 5);
+        }while(opcion != 6);
     }
 }

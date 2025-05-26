@@ -235,4 +235,22 @@ public class Metodos_ingenieria {
         }
     }
 
+    public void mostrarInventarioIngenieria() {
+        System.out.println("\n--- Inventario de Equipos de Ingeniería ---");
+        if (portatiles.isEmpty()) {
+            System.out.println("No hay computadores portátiles registrados.");
+        } else {
+            System.out.println("\nComputadores Portátiles:");
+            for (ComputadorPortatil pc : portatiles) {
+                System.out.println("Serial: " + pc.getSerial());
+                System.out.println("Marca: " + pc.getMarca());
+                System.out.println("Tamaño: " + pc.getTamano() + " pulgadas");
+                System.out.println("Precio: $" + pc.getPrecio());
+                System.out.println("Sistema Operativo: " + pc.getSistema());
+                System.out.println("Procesador: " + pc.getProcesador());
+                System.out.println("-----------------------------");
+            }
+        }
+    }
+
 }

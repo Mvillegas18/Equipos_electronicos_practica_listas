@@ -248,4 +248,23 @@ public class Metodos_Diseño {
         }
     }
 
+    public void mostrarInventarioDiseño() {
+        System.out.println("\n--- Inventario de Equipos de Ingeniería ---");
+
+        if (tabletas.isEmpty()) {
+            System.out.println("\nNo hay tabletas gráficas registradas.");
+        } else {
+            System.out.println("\nTabletas Gráficas:");
+            for (TabletaGrafica tab : tabletas) {
+                System.out.println("Serial: " + tab.getSerial());
+                System.out.println("Marca: " + tab.getMarca());
+                System.out.println("Tamaño: " + tab.getTamano() + " pulgadas");
+                System.out.println("Precio: $" + tab.getPrecio());
+                System.out.println("Almacenamiento: " + tab.getAlmacenamiento());
+                System.out.println("Peso: " + tab.getPeso() + " kg");
+                System.out.println("-----------------------------");
+            }
+        }
+    }
+
 }
