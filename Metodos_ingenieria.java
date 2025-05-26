@@ -89,12 +89,20 @@ public class Metodos_ingenieria {
             }
         } while (sistema == null);
 
-        System.out.println("Procesador: \n1. AMD Ryzen\n2. Intel Core i5");
-        String procesador = switch (validaciones.leerEntero(scanner)) {
-            case 1 -> "AMD Ryzen";
-            case 2 -> "Intel Core i5";
-            default -> "Desconocido";
-        };
+        int opcionProc;
+        String procesador;
+        do {
+            System.out.println("Procesador: \n1. AMD Ryzen\n2. Intel Core i5");
+            opcionProc = Validaciones.leerEntero(scanner);
+            switch (opcionProc) {
+                case 1 -> procesador = "AMD Ryzen";
+                case 2 -> procesador = "Intel Core i5";
+                default -> {
+                    System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+                    procesador = null;
+                }
+            }
+        } while (procesador == null);
 
         ComputadorPortatil pc = new ComputadorPortatil(serial, marca, tamano, precio, sistema, procesador);
         EstudianteIngenieria estudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, semestre,
