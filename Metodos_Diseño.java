@@ -87,7 +87,7 @@ public class Metodos_Diseño {
         float precio = Validaciones.leerFloat(scanner);
 
         System.out.println("Almacenamiento: \n1. 256 GB\n2. 512 GB\n3. 1 TB");
-        String almacenamiento = switch (scanner.nextInt()) {
+        String almacenamiento = switch (validaciones.leerEntero(scanner)) {
             case 1 -> "256 GB";
             case 2 -> "512 GB";
             case 3 -> "1 TB";

@@ -75,7 +75,7 @@ public class Metodos_ingenieria {
         float precio = Validaciones.leerFloat(scanner);
 
         System.out.println("Sistema Operativo: \n1. Windows 7\n2. Windows 10\n3. Windows 11");
-        String sistema = switch (scanner.nextInt()) {
+        String sistema = switch (validaciones.leerEntero(scanner)) {
             case 1 -> "Windows 7";
             case 2 -> "Windows 10";
             case 3 -> "Windows 11";
@@ -84,7 +84,7 @@ public class Metodos_ingenieria {
         scanner.nextLine();
 
         System.out.println("Procesador: \n1. AMD Ryzen\n2. Intel Core i5");
-        String procesador = switch (scanner.nextInt()) {
+        String procesador = switch (validaciones.leerEntero(scanner)) {
             case 1 -> "AMD Ryzen";
             case 2 -> "Intel Core i5";
             default -> "Desconocido";
