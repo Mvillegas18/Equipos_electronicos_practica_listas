@@ -93,7 +93,6 @@ public class Metodos_Diseño {
             case 3 -> "1 TB";
             default -> "Desconocido";
         };
-        scanner.nextLine();
 
         System.out.print("Peso (kg): ");
         float peso = Validaciones.leerFloat(scanner);

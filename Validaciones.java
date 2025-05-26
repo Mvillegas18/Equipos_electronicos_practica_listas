@@ -19,7 +19,7 @@ public class Validaciones {
     }
 
     public boolean validarCedula(String cedula) {
-        return cedula.matches("\\d+"); // solo dígitos (uno o más)
+        return cedula.matches("\\d+");
     }
 
     public static float leerFloat(Scanner sc) {

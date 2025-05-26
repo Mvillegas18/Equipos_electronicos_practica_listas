@@ -81,7 +81,6 @@ public class Metodos_ingenieria {
             case 3 -> "Windows 11";
             default -> "Desconocido";
         };
-        scanner.nextLine();
 
         System.out.println("Procesador: \n1. AMD Ryzen\n2. Intel Core i5");
         String procesador = switch (validaciones.leerEntero(scanner)) {
@@ -89,7 +88,6 @@ public class Metodos_ingenieria {
             case 2 -> "Intel Core i5";
             default -> "Desconocido";
         };
-        scanner.nextLine();
 
         ComputadorPortatil pc = new ComputadorPortatil(serial, marca, tamano, precio, sistema, procesador);
         EstudianteIngenieria estudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, semestre, promedio, serial);
