@@ -10,8 +10,7 @@ public class Menu {
             System.out.println("=== MENÚ PRINCIPAL ===");
             System.out.println("1. Estudiantes de Ingeniería");
             System.out.println("2. Estudiantes de Diseño");
-            System.out.println("3. Imprimir inventario total");
-            System.out.println("4. Salir");
+            System.out.println("3. Salir");
             System.out.print("Seleccione una opcion: ");
 
             opcion = Validaciones.leerEntero(scanner);
