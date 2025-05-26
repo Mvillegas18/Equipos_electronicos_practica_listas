@@ -98,7 +98,7 @@ public class Metodos_ingenieria {
                 case 1 -> procesador = "AMD Ryzen";
                 case 2 -> procesador = "Intel Core i5";
                 default -> {
-                    System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+                    System.out.println("Seleccione una de las 2 opciones");
                     procesador = null;
                 }
             }
