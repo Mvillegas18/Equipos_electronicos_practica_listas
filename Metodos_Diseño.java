@@ -96,7 +96,7 @@ public class Metodos_Diseño {
                 case 2 -> almacenamiento = "256 GB";
                 case 3 -> almacenamiento = "512 GB";
                 default -> {
-                    System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+                    System.out.println("Seleccione una de las 3 opciones");
                     almacenamiento = null;
                 }
             }
