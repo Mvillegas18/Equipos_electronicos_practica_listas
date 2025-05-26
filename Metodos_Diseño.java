@@ -9,7 +9,6 @@ public class Metodos_Diseño {
     List<EstudianteDiseno> diseno = new ArrayList<>();
     List<TabletaGrafica> tabletas = new ArrayList<>();
 
-
     public void registrarPrestamoDiseno() {
         System.out.println("\n--- Registro Préstamo Diseño ---");
 
@@ -86,13 +85,22 @@ public class Metodos_Diseño {
         System.out.print("Precio: ");
         float precio = Validaciones.leerFloat(scanner);
 
-        System.out.println("Almacenamiento: \n1. 256 GB\n2. 512 GB\n3. 1 TB");
-        String almacenamiento = switch (validaciones.leerEntero(scanner)) {
-            case 1 -> "256 GB";
-            case 2 -> "512 GB";
-            case 3 -> "1 TB";
-            default -> "Desconocido";
-        };
+        int opcionAlm;
+        String almacenamiento;
+        do {
+            System.out.println("Almacenamiento: \n1. 128 GB\n2. 256 GB\n3. 512 GB");
+            opcionAlm = Validaciones.leerEntero(scanner); 
+
+            switch (opcionAlm) {
+                case 1 -> almacenamiento = "128 GB";
+                case 2 -> almacenamiento = "256 GB";
+                case 3 -> almacenamiento = "512 GB";
+                default -> {
+                    System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+                    almacenamiento = null;
+                }
+            }
+        } while (almacenamiento == null);
 
         System.out.print("Peso (kg): ");
         float peso = Validaciones.leerFloat(scanner);
@@ -103,7 +111,8 @@ public class Metodos_Diseño {
         }
 
         TabletaGrafica tableta = new TabletaGrafica(serial, marca, tamano, precio, almacenamiento, peso);
-        EstudianteDiseno estudiante = new EstudianteDiseno(cedula, nombre, apellido, telefono, modalidad, asignaturas, serial);
+        EstudianteDiseno estudiante = new EstudianteDiseno(cedula, nombre, apellido, telefono, modalidad, asignaturas,
+                serial);
 
         tabletas.add(tableta);
         diseno.add(estudiante);
@@ -164,38 +173,38 @@ public class Metodos_Diseño {
     }
 
     public void devolverPrestamoDiseno() {
-            System.out.println("\n--- Devolución de Equipo Diseño ---");
+        System.out.println("\n--- Devolución de Equipo Diseño ---");
 
-            System.out.print("Ingrese la cédula del estudiante: ");
-            String cedula = scanner.nextLine();
+        System.out.print("Ingrese la cédula del estudiante: ");
+        String cedula = scanner.nextLine();
 
-            EstudianteDiseno estudianteAEliminar = null;
-            for (EstudianteDiseno estudiante : diseno) {
-                if (estudiante.getCedula().equals(cedula)) {
-                    estudianteAEliminar = estudiante;
-                    break;
-                }
+        EstudianteDiseno estudianteAEliminar = null;
+        for (EstudianteDiseno estudiante : diseno) {
+            if (estudiante.getCedula().equals(cedula)) {
+                estudianteAEliminar = estudiante;
+                break;
             }
+        }
 
-            if (estudianteAEliminar == null) {
-                System.out.println("No se encontró un préstamo asociado a esta cédula.");
-                return;
+        if (estudianteAEliminar == null) {
+            System.out.println("No se encontró un préstamo asociado a esta cédula.");
+            return;
+        }
+
+        TabletaGrafica equipoAEliminar = null;
+        for (TabletaGrafica pc : tabletas) {
+            if (pc.getSerial().equals(estudianteAEliminar.getSerial())) {
+                equipoAEliminar = pc;
+                break;
             }
+        }
 
-            TabletaGrafica equipoAEliminar = null;
-            for (TabletaGrafica pc : tabletas) {
-                if (pc.getSerial().equals(estudianteAEliminar.getSerial())) {
-                    equipoAEliminar = pc;
-                    break;
-                }
-            }
+        diseno.remove(estudianteAEliminar);
+        if (equipoAEliminar != null) {
+            tabletas.remove(equipoAEliminar);
+        }
 
-            diseno.remove(estudianteAEliminar);
-            if (equipoAEliminar != null) {
-                tabletas.remove(equipoAEliminar);
-            }
-
-            System.out.println("Devolución realizada con éxito.");
+        System.out.println("Devolución realizada con éxito.");
 
     }
 
