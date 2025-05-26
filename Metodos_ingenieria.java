@@ -8,7 +8,6 @@ public class Metodos_ingenieria {
     List<ComputadorPortatil> portatiles = new ArrayList<>();
     List<EstudianteIngenieria> ingenieria = new ArrayList<>();
 
-
     public void registrarPrestamoIngenieria() {
         System.out.println("\n--- Registro Préstamo Ingeniería ---");
 
@@ -74,13 +73,21 @@ public class Metodos_ingenieria {
         System.out.print("Precio: ");
         float precio = Validaciones.leerFloat(scanner);
 
-        System.out.println("Sistema Operativo: \n1. Windows 7\n2. Windows 10\n3. Windows 11");
-        String sistema = switch (validaciones.leerEntero(scanner)) {
-            case 1 -> "Windows 7";
-            case 2 -> "Windows 10";
-            case 3 -> "Windows 11";
-            default -> "Desconocido";
-        };
+        int opcionSO;
+        String sistema;
+        do {
+            System.out.println("Sistema Operativo: \n1. Windows 7\n2. Windows 10\n3. Windows 11");
+            opcionSO = Validaciones.leerEntero(scanner);
+            switch (opcionSO) {
+                case 1 -> sistema = "Windows 7";
+                case 2 -> sistema = "Windows 10";
+                case 3 -> sistema = "Windows 11";
+                default -> {
+                    System.out.println("Seleccione una de las 3 opciones");
+                    sistema = null;
+                }
+            }
+        } while (sistema == null);
 
         System.out.println("Procesador: \n1. AMD Ryzen\n2. Intel Core i5");
         String procesador = switch (validaciones.leerEntero(scanner)) {
@@ -90,7 +97,8 @@ public class Metodos_ingenieria {
         };
 
         ComputadorPortatil pc = new ComputadorPortatil(serial, marca, tamano, precio, sistema, procesador);
-        EstudianteIngenieria estudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, semestre, promedio, serial);
+        EstudianteIngenieria estudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, semestre,
+                promedio, serial);
 
         portatiles.add(pc);
         ingenieria.add(estudiante);
